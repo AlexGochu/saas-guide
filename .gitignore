@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore file for heroku
+Procfile
+/config/puma.rb
