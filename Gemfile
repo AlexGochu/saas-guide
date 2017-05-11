@@ -51,3 +51,5 @@ gem 'awesome_print'
 
 #Sidekiq for background processing
 gem 'sidekiq'
+# For sending emails in background
+gem 'devise-async'

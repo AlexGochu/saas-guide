@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :async
 
   validate :email_is_unique, on: :create
   after_create :create_account
@@ -24,6 +25,9 @@ class User < ApplicationRecord
   def create_account
     account = Account.new(email: email)
     account.save!
+  end
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 end
 
