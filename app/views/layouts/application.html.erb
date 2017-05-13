@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SaasGuide</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>SaasGuide</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<body>
+<!--<p class="notice"><#%= notice %></p>-->
+<!--<p class="alert"></p>-->
 
 
-  <%= yield %>
-  </body>
+<% flash.each do |type, message| %>
+    <div class="alert <%= bootstrap_lass_for(type)%> alert-dismissible" role="alert">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
+<%= yield %>
+</body>
 </html>

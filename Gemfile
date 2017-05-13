@@ -53,3 +53,7 @@ gem 'awesome_print'
 gem 'sidekiq'
 # For sending emails in background
 gem 'devise-async'
+# Bootsrap SASS for styling
+gem 'bootstrap-sass', '~> 3.3.6'
+# Simple From
+gem 'simple_form'
