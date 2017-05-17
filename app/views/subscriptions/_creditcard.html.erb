@@ -31,5 +31,5 @@
   </div>
 </div>
 <script type="text/javascript" charset="utf-8">
-   Stripe.setPublishableKey('pk_test_AQYeROOdB1B92kMif5tbBaEV');
+   Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key]%>");
 </script>

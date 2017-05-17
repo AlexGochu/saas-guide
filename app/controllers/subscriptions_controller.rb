@@ -18,9 +18,10 @@ class SubscriptionsController < ApplicationController
     #byebug
     #ap "Inside create in subscription. See params hash"
     #ap params
+    #byebug
     token = params[:stripeToken]
     plan = params[:plan][:stripe_id]
-    email = current_user ? current_user.email : "a1@test.com"
+    email = current_user.email
     current_account = Account.find_by_email(current_user.email)
     customer_id = current_account.customer_id
     current_plan = current_account.stripe_plan_id
@@ -115,6 +116,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_or_update_subscription(customer, current_plan, new_plan)
+    #byebug
     subscriptions = customer.subscriptions
     #Get subscription
     current_subscription = subscriptions.data.find {|o| o.plan.id == current_plan}
