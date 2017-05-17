@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  #gem 'byebug', platform: [:mri, :mingw, :mswin, :x64_mingw, :jruby]
 end
 
 group :development do
@@ -57,3 +57,7 @@ gem 'devise-async'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Simple From
 gem 'simple_form'
+#INstall stripe for payment processing
+gem 'stripe'
+
+gem 'pry-byebug'
