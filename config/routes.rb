@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
 
   root to: "home#index"
+
+  mount StripeEvent::Engine, at: '/stripe-event' # provide a custom path
+
 end

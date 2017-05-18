@@ -61,3 +61,9 @@ gem 'simple_form'
 gem 'stripe'
 
 gem 'pry-byebug'
+
+#For processing Stripe events
+gem 'stripe_event'
+
+#Ultrahook for forwarding stripe events
+gem 'ultrahook'
